@@ -1,0 +1,1509 @@
+.lab-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: #05080b;
+
+  animation:
+    introExit 0.10s cubic-bezier(0.8, 0, 0.2, 1) 4.5s forwards;
+}
+/* =========================================================
+   BACKGROUND GRID
+   ========================================================= */
+
+.lab-intro-grid {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(124, 255, 196, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(124, 255, 196, 0.045) 1px,
+      transparent 1px
+    );
+
+  background-size: 48px 48px;
+
+  animation:
+    gridAppear 1.5s ease 0.1s forwards;
+}
+
+/* =========================================================
+   ORBITAL LAB RINGS
+   ========================================================= */
+
+.lab-orbit {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  border: 1px solid rgba(124, 255, 196, 0.08);
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+.orbit-one {
+  width: min(70vw, 850px);
+  height: min(70vw, 850px);
+
+  animation:
+    orbitAppear 1.2s ease 0.45s forwards,
+    orbitRotate 12s linear 1.5s infinite;
+}
+
+.orbit-two {
+  width: min(48vw, 580px);
+  height: min(48vw, 580px);
+
+  border-style: dashed;
+  border-color: rgba(124, 255, 196, 0.06);
+
+  animation:
+    orbitAppear 1.2s ease 0.7s forwards,
+    orbitRotateReverse 16s linear 1.5s infinite;
+}
+
+/* =========================================================
+   DEVELOPER ELEMENTS
+   ========================================================= */
+
+.lab-elements {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+}
+
+.lab-element {
+  position: absolute;
+
+  color: rgba(124, 255, 196, 0.42);
+
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  font-weight: 500;
+
+  letter-spacing: 0.05em;
+
+  opacity: 0;
+
+  text-shadow:
+    0 0 10px rgba(124, 255, 196, 0.25);
+}
+
+.element-1 {
+  left: 18%;
+  top: 25%;
+
+  animation:
+    elementOne 3.4s ease 0.3s forwards,
+    elementFloat 3s ease-in-out 2s infinite;
+}
+
+.element-2 {
+  left: 77%;
+  top: 27%;
+
+  animation:
+    elementTwo 3.6s ease 0.45s forwards,
+    elementFloat 3.5s ease-in-out 2s infinite;
+}
+
+.element-3 {
+  left: 12%;
+  top: 62%;
+
+  animation:
+    elementThree 3.5s ease 0.6s forwards,
+    elementFloat 3.2s ease-in-out 2s infinite;
+}
+
+.element-4 {
+  left: 83%;
+  top: 61%;
+
+  animation:
+    elementFour 3.4s ease 0.75s forwards,
+    elementFloat 3.7s ease-in-out 2s infinite;
+}
+
+.element-5 {
+  left: 27%;
+  top: 17%;
+
+  animation:
+    elementFive 3.8s ease 0.4s forwards,
+    elementFloat 3.4s ease-in-out 2s infinite;
+}
+
+.element-6 {
+  left: 70%;
+  top: 18%;
+
+  animation:
+    elementSix 3.8s ease 0.55s forwards,
+    elementFloat 3.1s ease-in-out 2s infinite;
+}
+
+.element-7 {
+  left: 23%;
+  top: 76%;
+
+  animation:
+    elementSeven 3.7s ease 0.65s forwards,
+    elementFloat 3.6s ease-in-out 2s infinite;
+}
+
+.element-8 {
+  left: 73%;
+  top: 77%;
+
+  animation:
+    elementEight 3.7s ease 0.8s forwards,
+    elementFloat 3.3s ease-in-out 2s infinite;
+}
+
+.element-9 {
+  left: 8%;
+  top: 43%;
+
+  animation:
+    elementNine 3.5s ease 0.5s forwards,
+    elementFloat 3.5s ease-in-out 2s infinite;
+}
+
+.element-10 {
+  left: 88%;
+  top: 44%;
+
+  animation:
+    elementTen 3.5s ease 0.65s forwards,
+    elementFloat 3.2s ease-in-out 2s infinite;
+}
+
+.element-11 {
+  left: 42%;
+  top: 11%;
+
+  animation:
+    elementEleven 3.8s ease 0.5s forwards,
+    elementFloat 3.8s ease-in-out 2s infinite;
+}
+
+.element-12 {
+  left: 54%;
+  top: 85%;
+
+  animation:
+    elementTwelve 3.8s ease 0.7s forwards,
+    elementFloat 3.4s ease-in-out 2s infinite;
+}
+
+/* =========================================================
+   CIRCUIT LINES
+   ========================================================= */
+
+.lab-circuit {
+  position: absolute;
+
+  width: 100px;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(124, 255, 196, 0.4)
+    );
+
+  transform-origin: left center;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+.lab-circuit::after {
+  content: "";
+
+  position: absolute;
+
+  right: -3px;
+  top: -2px;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #7cffc4;
+
+  box-shadow:
+    0 0 10px rgba(124, 255, 196, 0.8);
+}
+
+.circuit-one {
+  left: 17%;
+  top: 33%;
+
+  transform: rotate(18deg);
+
+  animation:
+    circuitAppear 1.2s ease 0.9s forwards;
+}
+
+.circuit-two {
+  right: 15%;
+  top: 35%;
+
+  transform: rotate(162deg);
+
+  animation:
+    circuitAppear 1.2s ease 1s forwards;
+}
+
+.circuit-three {
+  left: 18%;
+  bottom: 34%;
+
+  transform: rotate(-18deg);
+
+  animation:
+    circuitAppear 1.2s ease 1.1s forwards;
+}
+
+.circuit-four {
+  right: 16%;
+  bottom: 34%;
+
+  transform: rotate(198deg);
+
+  animation:
+    circuitAppear 1.2s ease 1.2s forwards;
+}
+
+/* =========================================================
+   NODES
+   ========================================================= */
+
+.lab-node {
+  position: absolute;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: #7cffc4;
+
+  box-shadow:
+    0 0 6px #7cffc4,
+    0 0 18px rgba(124, 255, 196, 0.5);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  animation:
+    nodeAppear 0.8s ease forwards,
+    nodePulse 2s ease-in-out 1.2s infinite;
+}
+
+.node-one {
+  left: 19%;
+  top: 33%;
+
+  animation-delay: 0.9s;
+}
+
+.node-two {
+  right: 17%;
+  top: 35%;
+
+  animation-delay: 1s;
+}
+
+.node-three {
+  left: 20%;
+  bottom: 34%;
+
+  animation-delay: 1.1s;
+}
+
+.node-four {
+  right: 18%;
+  bottom: 34%;
+
+  animation-delay: 1.2s;
+}
+
+/* =========================================================
+   TERMINAL LINES
+   ========================================================= */
+
+.lab-terminal {
+  position: absolute;
+
+  width: 180px;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  animation:
+    terminalAppear 0.8s ease 0.7s forwards;
+}
+
+.terminal-line {
+  height: 1px;
+
+  margin: 7px 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(124, 255, 196, 0.28),
+      transparent
+    );
+
+  transform: scaleX(0);
+}
+
+.line-one {
+  animation:
+    terminalLine 0.7s ease 0.8s forwards;
+}
+
+.line-two {
+  animation:
+    terminalLine 0.8s ease 1s forwards;
+}
+
+.line-three {
+  animation:
+    terminalLine 0.7s ease 1.2s forwards;
+}
+
+/* =========================================================
+   CENTER GLOW
+   ========================================================= */
+
+.lab-glow {
+  position: absolute;
+
+  width: min(55vw, 700px);
+  height: min(35vw, 500px);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(124, 255, 196, 0.07),
+      transparent 68%
+    );
+
+  filter: blur(45px);
+
+  opacity: 0;
+
+  animation:
+    glowAppear 1.6s ease 1.25s forwards;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   NAME
+   ========================================================= */
+
+.lab-name {
+  position: relative;
+
+  z-index: 30;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  width: min(92vw, 1100px);
+
+  text-align: center;
+
+  user-select: none;
+}
+
+/* =========================================================
+   SHAIK MOHAMMED
+   ========================================================= */
+
+.lab-small-name {
+  display: flex !important;
+
+  flex-direction: row !important;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: nowrap !important;
+
+  width: max-content;
+
+  margin: 0 auto;
+
+  white-space: nowrap;
+
+  opacity: 0;
+
+  animation:
+    smallNameReveal
+    0.9s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    1.05s
+    forwards;
+}
+
+.lab-first-name,
+.lab-middle-name {
+  display: inline-flex !important;
+
+  flex-direction: row !important;
+
+  align-items: center;
+
+  width: auto !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  white-space: nowrap;
+
+  color: rgba(245, 247, 250, 0.94);
+
+  font-family: inherit;
+
+  font-size: clamp(17px, 2.1vw, 30px);
+
+  font-weight: 550;
+
+  letter-spacing: 0.18em;
+
+  text-shadow:
+    0 0 12px rgba(124, 255, 196, 0.16);
+}
+
+.lab-space {
+  display: inline-block;
+
+  width: 0.45em;
+
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   SMALL NAME LETTER ANIMATION
+   ========================================================= */
+
+.lab-first-name span,
+.lab-middle-name span {
+  display: inline-block;
+
+  opacity: 0;
+
+  filter: blur(8px);
+
+  transform:
+    translateY(18px)
+    scale(0.88);
+}
+
+.lab-first-name span:nth-child(1) {
+  animation: nameLetter 0.7s ease 1.25s forwards;
+}
+
+.lab-first-name span:nth-child(2) {
+  animation: nameLetter 0.7s ease 1.32s forwards;
+}
+
+.lab-first-name span:nth-child(3) {
+  animation: nameLetter 0.7s ease 1.39s forwards;
+}
+
+.lab-first-name span:nth-child(4) {
+  animation: nameLetter 0.7s ease 1.46s forwards;
+}
+
+.lab-first-name span:nth-child(5) {
+  animation: nameLetter 0.7s ease 1.53s forwards;
+}
+
+.lab-middle-name span:nth-child(1) {
+  animation: nameLetter 0.7s ease 1.25s forwards;
+}
+
+.lab-middle-name span:nth-child(2) {
+  animation: nameLetter 0.7s ease 1.32s forwards;
+}
+
+.lab-middle-name span:nth-child(3) {
+  animation: nameLetter 0.7s ease 1.39s forwards;
+}
+
+.lab-middle-name span:nth-child(4) {
+  animation: nameLetter 0.7s ease 1.46s forwards;
+}
+
+.lab-middle-name span:nth-child(5) {
+  animation: nameLetter 0.7s ease 1.53s forwards;
+}
+
+.lab-middle-name span:nth-child(6) {
+  animation: nameLetter 0.7s ease 1.60s forwards;
+}
+
+.lab-middle-name span:nth-child(7) {
+  animation: nameLetter 0.7s ease 1.67s forwards;
+}
+
+.lab-middle-name span:nth-child(8) {
+  animation: nameLetter 0.7s ease 1.74s forwards;
+}
+
+/* =========================================================
+   HAAMEED
+   ========================================================= */
+
+.lab-last-name {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+
+  margin-top: 18px;
+
+  white-space: nowrap;
+
+  color: #f5f7fa;
+
+  font-family: inherit;
+
+  font-size: clamp(64px, 11vw, 154px);
+
+  font-weight: 750;
+
+  line-height: 0.82;
+
+  letter-spacing: 0.055em;
+
+  padding-left: 0.055em;
+
+  text-shadow:
+    0 0 2px rgba(255, 255, 255, 0.5),
+    0 0 18px rgba(124, 255, 196, 0.28),
+    0 0 65px rgba(124, 255, 196, 0.1);
+
+  filter:
+    drop-shadow(
+      0 0 18px rgba(124, 255, 196, 0.08)
+    );
+
+  isolation: isolate;
+}
+
+/* =========================================================
+   HAAMEED GREEN OUTLINE
+   ========================================================= */
+
+.lab-last-name::before {
+  content: "HAAMEED";
+
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: transparent;
+
+  -webkit-text-stroke:
+    1px rgba(124, 255, 196, 0.22);
+
+  opacity: 0;
+
+  animation:
+    nameOutlineReveal
+    1s
+    ease
+    2.2s
+    forwards;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   HAAMEED LETTERS
+   ========================================================= */
+
+.lab-last-name span {
+  position: relative;
+
+  display: inline-block;
+
+  opacity: 0;
+
+  filter: blur(14px);
+
+  transform:
+    translateY(40px)
+    scale(0.72);
+
+  animation:
+    mainNameLetter
+    0.95s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    forwards;
+}
+
+.lab-last-name span:nth-child(1) {
+  animation-delay: 1.65s;
+}
+
+.lab-last-name span:nth-child(2) {
+  animation-delay: 1.73s;
+}
+
+.lab-last-name span:nth-child(3) {
+  animation-delay: 1.81s;
+}
+
+.lab-last-name span:nth-child(4) {
+  animation-delay: 1.89s;
+}
+
+.lab-last-name span:nth-child(5) {
+  animation-delay: 1.97s;
+}
+
+.lab-last-name span:nth-child(6) {
+  animation-delay: 2.05s;
+}
+
+.lab-last-name span:nth-child(7) {
+  animation-delay: 2.13s;
+}
+
+/* =========================================================
+   CINEMATIC SCAN BEAM
+   ========================================================= */
+
+.lab-scan-line {
+  position: absolute;
+
+  z-index: 20;
+
+  left: -10%;
+
+  width: 120%;
+  height: 2px;
+
+  top: 13%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(124, 255, 196, 0.04) 15%,
+      rgba(124, 255, 196, 0.45) 42%,
+      #7cffc4 50%,
+      rgba(124, 255, 196, 0.45) 58%,
+      rgba(124, 255, 196, 0.04) 85%,
+      transparent 100%
+    );
+
+  box-shadow:
+    0 0 12px rgba(124, 255, 196, 0.35),
+    0 0 35px rgba(124, 255, 196, 0.18);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  animation:
+    cinematicScan 1.8s
+    cubic-bezier(0.65, 0, 0.35, 1)
+    2.35s
+    forwards;
+}
+
+/* Soft glow underneath the beam */
+
+.lab-scan-line::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: -18px;
+
+  width: 100%;
+  height: 38px;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(124, 255, 196, 0.08),
+      transparent
+    );
+
+  filter: blur(8px);
+}
+
+/* =========================================================
+   ONE-TIME MICRO GLITCH
+   ========================================================= */
+
+.lab-last-name::after {
+  content: "HAAMEED";
+
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #7cffc4;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  clip-path: inset(0 100% 0 0);
+
+  text-shadow:
+    -3px 0 rgba(255, 255, 255, 0.65),
+    3px 0 rgba(124, 255, 196, 0.7);
+
+  animation:
+    nameGlitch 0.42s
+    steps(2, end)
+    3.05s
+    forwards;
+}
+
+/* =========================================================
+   FLASH
+   ========================================================= */
+
+.lab-flash {
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #dffff0;
+
+  box-shadow:
+    0 0 20px #7cffc4,
+    0 0 80px rgba(124, 255, 196, 0.9);
+
+  opacity: 0;
+
+  animation:
+    flash 0.9s ease 3.2s forwards;
+}
+
+/* =========================================================
+   NAME KEYFRAMES
+   ========================================================= */
+
+@keyframes smallNameReveal {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(16px)
+      scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+@keyframes nameLetter {
+  0% {
+    opacity: 0;
+
+    filter: blur(8px);
+
+    transform:
+      translateY(18px)
+      scale(0.88);
+  }
+
+  65% {
+    opacity: 1;
+
+    filter: blur(0);
+
+    transform:
+      translateY(-3px)
+      scale(1.04);
+  }
+
+  100% {
+    opacity: 1;
+
+    filter: blur(0);
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+@keyframes mainNameLetter {
+  0% {
+    opacity: 0;
+
+    filter: blur(14px);
+
+    transform:
+      translateY(40px)
+      scale(0.72);
+  }
+
+  55% {
+    opacity: 1;
+
+    filter: blur(0);
+
+    transform:
+      translateY(-5px)
+      scale(1.045);
+  }
+
+  78% {
+    transform:
+      translateY(1px)
+      scale(0.99);
+  }
+
+  100% {
+    opacity: 1;
+
+    filter: blur(0);
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+@keyframes nameOutlineReveal {
+  from {
+    opacity: 0;
+
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+/* =========================================================
+   CINEMATIC SCAN
+   ========================================================= */
+
+@keyframes cinematicScan {
+  0% {
+    opacity: 0;
+
+    top: 10%;
+
+    transform: scaleX(0.55);
+  }
+
+  12% {
+    opacity: 1;
+  }
+
+  55% {
+    opacity: 0.95;
+  }
+
+  100% {
+    opacity: 0;
+
+    top: 88%;
+
+    transform: scaleX(1);
+  }
+}
+
+/* =========================================================
+   MICRO GLITCH
+   ========================================================= */
+
+@keyframes nameGlitch {
+  0% {
+    opacity: 0;
+
+    clip-path: inset(0 100% 0 0);
+
+    transform:
+      translate(0)
+      skewX(0);
+  }
+
+  10% {
+    opacity: 0.85;
+
+    clip-path: inset(15% 0 60% 0);
+
+    transform:
+      translate(-4px)
+      skewX(-4deg);
+  }
+
+  22% {
+    opacity: 0.65;
+
+    clip-path: inset(60% 0 12% 0);
+
+    transform:
+      translate(5px)
+      skewX(3deg);
+  }
+
+  34% {
+    opacity: 0.8;
+
+    clip-path: inset(35% 0 40% 0);
+
+    transform:
+      translate(-2px)
+      skewX(-2deg);
+  }
+
+  48% {
+    opacity: 0.45;
+
+    clip-path: inset(70% 0 5% 0);
+
+    transform:
+      translate(3px)
+      skewX(2deg);
+  }
+
+  62% {
+    opacity: 0.25;
+
+    clip-path: inset(10% 0 75% 0);
+
+    transform:
+      translate(-1px);
+  }
+
+  100% {
+    opacity: 0;
+
+    clip-path: inset(0 100% 0 0);
+
+    transform:
+      translate(0);
+  }
+}
+
+/* =========================================================
+   GENERAL KEYFRAMES
+   ========================================================= */
+
+@keyframes gridAppear {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes orbitAppear {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes orbitRotate {
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(360deg);
+  }
+}
+
+@keyframes orbitRotateReverse {
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(-360deg);
+  }
+}
+
+@keyframes elementOne {
+  0% {
+    opacity: 0;
+    transform: translate(100px, 80px);
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.5;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes elementTwo {
+  0% {
+    opacity: 0;
+    transform: translate(-100px, 80px);
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.5;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes elementThree {
+  0% {
+    opacity: 0;
+    transform: translate(100px, -80px);
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.5;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes elementFour {
+  0% {
+    opacity: 0;
+    transform: translate(-100px, -80px);
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.5;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes elementFive {
+  0% {
+    opacity: 0;
+    transform: translate(70px, 120px);
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.4;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes elementSix {
+  0% {
+    opacity: 0;
+    transform: translate(-70px, 120px);
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.4;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes elementSeven {
+  0% {
+    opacity: 0;
+    transform: translate(70px, -120px);
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.4;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes elementEight {
+  0% {
+    opacity: 0;
+    transform: translate(-70px, -120px);
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.4;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes elementNine {
+  0% {
+    opacity: 0;
+    transform: translate(150px, 0);
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.4;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes elementTen {
+  0% {
+    opacity: 0;
+    transform: translate(-150px, 0);
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.4;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes elementEleven {
+  0% {
+    opacity: 0;
+    transform: translate(0, 120px);
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.4;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes elementTwelve {
+  0% {
+    opacity: 0;
+    transform: translate(0, -120px);
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.4;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes elementFloat {
+  0%,
+  100% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: -8px;
+  }
+}
+
+@keyframes circuitAppear {
+  from {
+    opacity: 0;
+
+    transform-origin: left center;
+
+    scale: 0;
+  }
+
+  to {
+    opacity: 1;
+
+    scale: 1;
+  }
+}
+
+@keyframes nodeAppear {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes nodePulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.8);
+  }
+}
+
+@keyframes terminalAppear {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes terminalLine {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes glowAppear {
+  0% {
+    opacity: 0;
+
+    transform: scale(0.6);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0.5;
+
+    transform: scale(1.08);
+  }
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0;
+
+    transform: scale(0.3);
+  }
+
+  40% {
+    opacity: 1;
+
+    transform: scale(1.5);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform: scale(8);
+  }
+}
+
+/* =========================================================
+   CINEMATIC EXIT
+   ========================================================= */
+
+@keyframes introExit {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+
+  55% {
+    opacity: 1;
+    transform: scale(1.006);
+    filter: blur(0);
+  }
+
+  75% {
+    opacity: 0.96;
+    transform: scale(1.012);
+    filter: blur(0);
+  }
+
+  90% {
+    opacity: 0.65;
+    transform: scale(1.018);
+    filter: blur(0.2px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.025);
+    filter: blur(0.5px);
+    visibility: hidden;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .lab-first-name,
+  .lab-middle-name {
+    font-size: 13px;
+
+    letter-spacing: 0.11em;
+  }
+
+  .lab-space {
+    width: 0.3em;
+  }
+
+  .lab-last-name {
+    margin-top: 14px;
+
+    font-size: clamp(44px, 15vw, 76px);
+
+    letter-spacing: 0.035em;
+
+    padding-left: 0.035em;
+  }
+
+  .lab-scan-line {
+    width: 150%;
+
+    left: -25%;
+  }
+
+  .lab-element {
+    font-size: 10px;
+  }
+
+  .orbit-one {
+    width: 115vw;
+    height: 115vw;
+  }
+
+  .orbit-two {
+    width: 75vw;
+    height: 75vw;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .lab-intro,
+  .lab-intro-grid,
+  .lab-orbit,
+  .lab-element,
+  .lab-circuit,
+  .lab-node,
+  .lab-terminal,
+  .terminal-line,
+  .lab-small-name,
+  .lab-first-name span,
+  .lab-middle-name span,
+  .lab-last-name span,
+  .lab-last-name::before,
+  .lab-last-name::after,
+  .lab-scan-line,
+  .lab-glow,
+  .lab-flash {
+    animation: none !important;
+  }
+
+  .lab-intro {
+    opacity: 1;
+  }
+
+  .lab-intro-grid,
+  .lab-orbit,
+  .lab-element,
+  .lab-circuit,
+  .lab-node,
+  .lab-terminal,
+  .lab-small-name,
+  .lab-first-name span,
+  .lab-middle-name span,
+  .lab-last-name span {
+    opacity: 1;
+  }
+
+  .terminal-line {
+    transform: scaleX(1);
+  }
+}
