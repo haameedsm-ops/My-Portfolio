@@ -1,12 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-
-const projectAliases = {
-  forensics: "forensix",
-  chatjump: "chatjump",
-  disease: "diseaseAnalyzer",
-  quiz: "quizApp",
-  fileexplorer: "miniFileExplorer"
-};
+import {
+  getHelpText,
+  getCommandOutput,
+  isProjectCommand,
+  getProjectName
+} from "./LabConsoleCommands";
 
 function LabConsole() {
   const [command, setCommand] = useState("");
@@ -42,12 +40,23 @@ function LabConsole() {
     ]);
   };
 
+  const navigateToProjects = () => {
+    setTimeout(() => {
+      const projectElement = document.getElementById("projects");
+
+      if (projectElement) {
+        projectElement.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    }, 250);
+  };
+
   const runCommand = (rawCommand) => {
     const trimmedCommand = rawCommand.trim();
 
-    if (!trimmedCommand) {
-      return;
-    }
+    if (!trimmedCommand) return;
 
     setHistory((prev) => [...prev, trimmedCommand]);
     setHistoryIndex(-1);
@@ -64,150 +73,29 @@ function LabConsole() {
     }
 
     if (baseCommand === "help") {
-      addOutput(
-        "Available commands:\n\n" +
-          "whoami       → About me\n" +
-          "about        → Developer profile\n" +
-          "skills       → Technical skills\n" +
-          "projects     → Project list\n" +
-          "ls           → List projects\n" +
-          "status       → Current system status\n" +
-          "forensics    → Open ForensiX\n" +
-          "chatjump     → Open ChatJump\n" +
-          "disease      → Open Disease Analyzer\n" +
-          "quiz         → Open Quiz Application\n" +
-          "fileexplorer → Open Mini File Explorer\n" +
-          "open <name>  → Open a project\n" +
-          "github       → GitHub information\n" +
-          "contact      → Contact information\n" +
-          "clear        → Clear console"
-      );
+      addOutput(getHelpText());
       return;
     }
 
-    if (baseCommand === "whoami") {
-      addOutput(
-        "HAAMEED\n" +
-          "3rd Year Computer Science Engineering Student\n" +
-          "Builder • Explorer • Problem Solver"
-      );
-      return;
-    }
+    const result = getCommandOutput(baseCommand, argument);
 
-    if (baseCommand === "about") {
-      addOutput(
-        "I'm a Computer Science Engineering student who enjoys building\n" +
-          "practical software, exploring cybersecurity, and learning by\n" +
-          "turning ideas into working systems."
-      );
-      return;
-    }
+    if (result) {
+      addOutput(result.text, result.type);
 
-    if (baseCommand === "skills") {
-      addOutput(
-        "Languages: C, C++, Java, Python, JavaScript, SQL\n" +
-          "Frontend: HTML, CSS, React\n" +
-          "Backend: Flask\n" +
-          "Tools: Git, GitHub, VS Code\n" +
-          "Other: Android, Cybersecurity, APIs"
-      );
-      return;
-    }
-
-    if (baseCommand === "projects" || baseCommand === "ls") {
-      addOutput(
-        "PROJECTS\n\n" +
-          "01  FORENSIX\n" +
-          "02  CHATJUMP\n" +
-          "03  DISEASE ANALYZER\n" +
-          "04  QUIZ APPLICATION\n" +
-          "05  MINI FILE EXPLORER"
-      );
-      return;
-    }
-
-    if (baseCommand === "status") {
-      addOutput(
-        "SYSTEM STATUS\n\n" +
-          "Portfolio     : ONLINE\n" +
-          "Developer Lab : ONLINE\n" +
-          "Projects      : ACTIVE\n" +
-          "Learning      : CONTINUOUS"
-      );
-      return;
-    }
-
-    if (baseCommand === "github") {
-      addOutput("GitHub → Check the GitHub link in the Contact section.");
-      return;
-    }
-
-    if (baseCommand === "contact") {
-      addOutput(
-        "CONTACT\n\n" +
-          "Email   → Available below\n" +
-          "GitHub  → Available below\n" +
-          "LinkedIn → Available below"
-      );
-      return;
-    }
-
-    if (baseCommand === "open") {
-      if (!argument) {
-        addOutput("Usage: open <project>");
-        return;
+      if (result.navigate) {
+        navigateToProjects();
       }
 
-      const normalizedProject =
-        projectAliases[argument.toLowerCase()] || argument.toLowerCase();
-
-      const validProjects = [
-        "forensix",
-        "chatjump",
-        "diseaseAnalyzer",
-        "quizApp",
-        "miniFileExplorer"
-      ];
-
-      if (validProjects.includes(normalizedProject)) {
-        addOutput(`Opening ${normalizedProject}...`, "success");
-
-        setTimeout(() => {
-          const projectElement = document.getElementById("projects");
-
-          if (projectElement) {
-            projectElement.scrollIntoView({
-              behavior: "smooth",
-              block: "start"
-            });
-          }
-        }, 250);
-
-        return;
-      }
-
-      addOutput(
-        `Project '${argument}' not found.\nType 'projects' to see available projects.`
-      );
       return;
     }
 
-    if (projectAliases[baseCommand]) {
-      const projectName = projectAliases[baseCommand];
+    if (isProjectCommand(baseCommand)) {
+      addOutput(
+        `Opening ${getProjectName(baseCommand)}...`,
+        "success"
+      );
 
-      addOutput(`Opening ${projectName}...`, "success");
-
-      setTimeout(() => {
-        const projectElement = document.getElementById("projects");
-
-        if (projectElement) {
-          projectElement.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
-        }
-      }, 250);
-
+      navigateToProjects();
       return;
     }
 

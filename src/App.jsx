@@ -1,49 +1,28 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import LabConsole from "./components/LabConsole";
 import CurrentBuild from "./components/CurrentBuild";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import Achievements from "./components/Achievements";
 import Journey from "./components/Journey";
-import Contacts from "./components/Contacts";
-import LabConsole from "./components/LabConsole";
-import ScrollReveal from "./components/ScrollReveal";
+import Contact from "./components/Contacts";
 
 function App() {
   return (
     <>
       <Navbar />
-
       <Hero />
-
-      <ScrollReveal>
-        <CurrentBuild />
-      </ScrollReveal>
-
-      <ScrollReveal delay={50}>
-        <About />
-      </ScrollReveal>
-
-      <ScrollReveal delay={100}>
-        <Skills />
-      </ScrollReveal>
-
-      <ScrollReveal delay={100}>
-        <Projects />
-      </ScrollReveal>
-
-      <ScrollReveal delay={100}>
-        <Journey />
-      </ScrollReveal>
-
-      <ScrollReveal delay={100}>
-        <Contacts />
-      </ScrollReveal>
-
-      <ScrollReveal delay={100}>
-        <LabConsole />
-      </ScrollReveal>
+      <CurrentBuild />
+      <About />
+      <Skills />
+      <Projects />
+      <Achievements />
+      <Journey />
+      <Contact />
+      <LabConsole />
     </>
   );
 }

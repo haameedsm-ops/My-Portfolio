@@ -2,7 +2,7 @@ function Journey() {
   return (
     <section className="journey" id="journey">
       <div className="journey-header">
-        <p className="section-label">04 / JOURNEY</p>
+        <p className="section-label">05 / JOURNEY</p>
 
         <h2>
           Still
@@ -16,7 +16,6 @@ function Journey() {
       </div>
 
       <div className="timeline">
-
         <div className="timeline-item">
           <div className="timeline-year">START</div>
 
@@ -24,6 +23,7 @@ function Journey() {
 
           <div className="timeline-content">
             <h3>Programming Foundations</h3>
+
             <p>
               Started with C and C++, learning the fundamentals of
               programming, algorithms, and problem solving.
@@ -38,6 +38,7 @@ function Journey() {
 
           <div className="timeline-content">
             <h3>Exploring Development</h3>
+
             <p>
               Expanded into Java, Python, SQL, web development, and
               application development through hands-on projects.
@@ -52,6 +53,7 @@ function Journey() {
 
           <div className="timeline-content">
             <h3>Building Real Systems</h3>
+
             <p>
               Working with React, Android, cybersecurity concepts, GitHub,
               and real-world projects while continuously learning new
@@ -59,7 +61,6 @@ function Journey() {
             </p>
           </div>
         </div>
-
       </div>
     </section>
   );

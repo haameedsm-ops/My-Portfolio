@@ -4,7 +4,7 @@ function Contact() {
   return (
     <section className="contact" id="contact">
       <div className="contact-header">
-        <p className="section-label">05 / CONTACT</p>
+        <p className="section-label">06 / CONTACT</p>
 
         <h2>
           Have an idea?
@@ -19,35 +19,28 @@ function Contact() {
       </div>
 
       <div className="contact-links">
-
-        <a
-          href="mailto:YOUR_EMAIL"
-          className="contact-link email-link"
-        >
+        <a href="mailto:haameedsm@gmail.com">
           <FaEnvelope className="contact-icon" />
-          <span>EMAIL</span>
+          EMAIL
         </a>
 
         <a
           href="https://github.com/haameedsm-ops"
           target="_blank"
           rel="noreferrer"
-          className="contact-link github-link"
         >
           <FaGithub className="contact-icon" />
-          <span>GITHUB</span>
+          GITHUB
         </a>
 
         <a
-          href="https://www.linkedin.com/in/shaik-mohammed-haameed-08239a320?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+          href="https://www.linkedin.com/"
           target="_blank"
           rel="noreferrer"
-          className="contact-link linkedin-link"
         >
           <FaLinkedinIn className="contact-icon" />
-          <span>LINKEDIN</span>
+          LINKEDIN
         </a>
-
       </div>
     </section>
   );

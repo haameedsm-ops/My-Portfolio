@@ -1,0 +1,8 @@
+{
+  "thresholds": {
+    "python": 600,
+    "javascript": 1000,
+    "css": 3500,
+    "html": 1500
+  }
+}
