@@ -1,17 +1,13 @@
 const projectAliases = {
   forensics: "forensix",
   chatjump: "chatjump",
-  disease: "diseaseAnalyzer",
-  quiz: "quizApp",
-  fileexplorer: "miniFileExplorer"
+  disease: "diseaseAnalyzer"
 };
 
 const projectNames = {
   forensix: "ForensiX",
   chatjump: "ChatJump",
-  diseaseAnalyzer: "Disease Analyzer",
-  quizApp: "Quiz Application",
-  miniFileExplorer: "Mini File Explorer"
+  diseaseAnalyzer: "Disease Analyzer"
 };
 
 const projectCommands = {
@@ -43,9 +39,7 @@ const projectCommands = {
       "PROJECTS\n\n" +
       "01  FORENSIX\n" +
       "02  CHATJUMP\n" +
-      "03  DISEASE ANALYZER\n" +
-      "04  QUIZ APPLICATION\n" +
-      "05  MINI FILE EXPLORER"
+      "03  DISEASE ANALYZER"
   },
 
   ls: {
@@ -53,9 +47,7 @@ const projectCommands = {
       "PROJECTS\n\n" +
       "01  FORENSIX\n" +
       "02  CHATJUMP\n" +
-      "03  DISEASE ANALYZER\n" +
-      "04  QUIZ APPLICATION\n" +
-      "05  MINI FILE EXPLORER"
+      "03  DISEASE ANALYZER"
   },
 
   status: {
@@ -68,14 +60,14 @@ const projectCommands = {
   },
 
   github: {
-    text: "GitHub → Check the GitHub link in the Contact section."
+    text: "GitHub → Check the GitHub links in the Projects section."
   },
 
   contact: {
     text:
       "CONTACT\n\n" +
-      "Email   → Available below\n" +
-      "GitHub  → Available below\n" +
+      "Email    → Available below\n" +
+      "GitHub   → Available below\n" +
       "LinkedIn → Available below"
   }
 };
@@ -91,8 +83,6 @@ export const getHelpText = () =>
   "forensics    → Open ForensiX\n" +
   "chatjump     → Open ChatJump\n" +
   "disease      → Open Disease Analyzer\n" +
-  "quiz         → Open Quiz Application\n" +
-  "fileexplorer → Open Mini File Explorer\n" +
   "open <name>  → Open a project\n" +
   "github       → GitHub information\n" +
   "contact      → Contact information\n" +

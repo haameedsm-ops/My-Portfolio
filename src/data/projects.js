@@ -5,6 +5,7 @@ const projects = {
     type: "CYBERSECURITY",
     role: "FRONTEND DEVELOPER",
     stack: "React / Flask / Python",
+    github: "https://github.com/mbibimariyam5-maker/ForensiX",
 
     problem:
       "Digital forensic investigations often require organizing evidence and generating structured reports.",
@@ -22,6 +23,7 @@ const projects = {
     type: "ANDROID",
     role: "DEVELOPER",
     stack: "Android / Java / Accessibility API",
+    github: "https://github.com/haameedsm-ops/ChatJump",
 
     problem:
       "Navigating extremely long chat conversations manually can be slow and frustrating.",
@@ -39,6 +41,7 @@ const projects = {
     type: "PYTHON",
     role: "DEVELOPER",
     stack: "Python / Flask",
+    github: "https://github.com/haameedsm-ops/Disease-analyzer",
 
     problem:
       "Users need a simple interface for analyzing disease-related information.",
@@ -48,40 +51,6 @@ const projects = {
 
     learning:
       "Flask routing, frontend-backend communication, form handling, and Python web development."
-  },
-
-  quizApp: {
-    name: "QUIZ APPLICATION",
-    status: "PROJECT",
-    type: "PYTHON",
-    role: "DEVELOPER",
-    stack: "Python / Tkinter",
-
-    problem:
-      "Traditional quiz programs often lack an interactive interface and attempt tracking.",
-
-    solution:
-      "A GUI-based quiz application with multiple quizzes, timers, scoring, and previous attempt tracking.",
-
-    learning:
-      "Tkinter GUI development, event handling, timers, file storage, and application state."
-  },
-
-  miniFileExplorer: {
-    name: "MINI FILE EXPLORER",
-    status: "PROJECT",
-    type: "JAVA",
-    role: "DEVELOPER",
-    stack: "Java / Swing",
-
-    problem:
-      "Understanding file-system operations is easier through a visual interface.",
-
-    solution:
-      "A desktop file explorer built with Java Swing for browsing and interacting with files.",
-
-    learning:
-      "Java Swing, file-system APIs, GUI events, and desktop application architecture."
   }
 };
 
