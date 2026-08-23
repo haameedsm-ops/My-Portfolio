@@ -1,16 +1,113 @@
-# React + Vite
+# My Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive developer portfolio built with **React + Vite**, designed with a clean dark developer/terminal-inspired interface.
 
-Currently, two official plugins are available:
+## 🚀 Live Portfolio
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Coming soon.
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Responsive design for desktop, tablet, and mobile
+* Modern dark developer-style UI
+* Hero section with smooth navigation
+* Current build / featured project section
+* About section
+* Technical skills showcase
+* Project case studies
+* Journey / experience timeline
+* Contact section
+* Interactive case-study modal
+* GitHub project links
+* Smooth page and section transitions
+* Mobile-friendly navigation
+* Developer-style lab console
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React
+* JavaScript
+* HTML5
+* CSS3
+* Vite
+* Git & GitHub
+
+## 📁 Project Structure
+
+```text
+my-portfolio/
+├── public/
+├── src/
+│   ├── App.jsx
+│   ├── App.css
+│   └── ...
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── vite.config.js
+└── README.md
+```
+
+## 💻 Run Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/haameedsm-ops/My-Portfolio.git
+```
+
+Open the project:
+
+```bash
+cd My-Portfolio
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Then open the local URL shown in the terminal.
+
+## 📦 Build for Production
+
+```bash
+npm run build
+```
+
+To preview the production build:
+
+```bash
+npm run preview
+```
+
+## 🎯 Purpose
+
+This portfolio showcases my development journey, technical skills, projects, and ongoing work while providing a professional place to present my work to recruiters, developers, and collaborators.
+
+## 👨‍💻 Developer
+
+**SM Haameed**
+
+Computer Science Engineering Student
+
+Interested in software development, cybersecurity, web development, and building practical projects.
+
+## 📌 Status
+
+**Active Development**
+
+The portfolio will continue to evolve as new projects, skills, and achievements are added.
+
+---
+
+⭐ If you find this project useful or interesting, consider giving the repository a star!
