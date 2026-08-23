@@ -1,3 +1,4 @@
+import "./ScrollReveal.css";
 import { useEffect, useRef, useState } from "react";
 
 function ScrollReveal({ children, delay = 0 }) {
