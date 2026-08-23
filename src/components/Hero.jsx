@@ -4,39 +4,51 @@ function Hero() {
   const [transitioning, setTransitioning] = useState(false);
 
   const handleNavigation = (event, target) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    if (transitioning) {
+  if (transitioning) {
+    return;
+  }
+
+  setTransitioning(true);
+
+  setTimeout(() => {
+    const targetElement = document.getElementById(target);
+
+    if (!targetElement) {
+      setTransitioning(false);
       return;
     }
 
-    setTransitioning(true);
+    const targetPosition =
+      targetElement.getBoundingClientRect().top + window.scrollY;
 
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "instant",
+    });
+
+    // Let the transition panels finish opening.
     setTimeout(() => {
-      const targetElement = document.getElementById(target);
+      // Remove the full-screen transition overlay first.
+      setTransitioning(false);
 
-      if (!targetElement) {
-        setTransitioning(false);
-        return;
-      }
-
-      window.scrollTo({
-        top: targetElement.offsetTop,
-        behavior: "instant"
-      });
-
-      targetElement.classList.remove("screen-incoming");
-
-      void targetElement.offsetWidth;
-
-      targetElement.classList.add("screen-incoming");
-
-      setTimeout(() => {
+      // Wait one frame for the overlay to disappear,
+      // then start the destination screen animation.
+      requestAnimationFrame(() => {
         targetElement.classList.remove("screen-incoming");
-        setTransitioning(false);
-      }, 1100);
-    }, 500);
-  };
+
+        void targetElement.offsetWidth;
+
+        targetElement.classList.add("screen-incoming");
+
+        setTimeout(() => {
+          targetElement.classList.remove("screen-incoming");
+        }, 1050);
+      });
+    }, 800);
+  }, 500);
+};
 
   return (
     <>

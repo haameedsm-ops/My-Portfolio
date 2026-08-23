@@ -3122,3 +3122,46 @@ a {
     padding: 22px 16px;
   }
 }
+/* =========================================================
+   SCREEN ENTRY ANIMATION
+========================================================= */
+
+.screen-incoming {
+  position: relative;
+  z-index: 10001;
+  animation: screenIncoming 1.05s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes screenIncoming {
+  0% {
+    opacity: 0;
+    transform: translateX(100vw) scale(0.985);
+  }
+
+  35% {
+    opacity: 1;
+    transform: translateX(35px) scale(0.995);
+  }
+
+  70% {
+    transform: translateX(-6px) scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+/* GitHub project button icon */
+.project-secondary .github-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  display: block;
+  color: currentColor;
+  transition: transform 0.2s ease;
+}
+
+.project-secondary:hover .github-icon {
+  transform: translateY(-1px);
+}

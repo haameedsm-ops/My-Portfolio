@@ -15,9 +15,7 @@ function ScrollReveal({ children, delay = 0 }) {
         if (entry.isIntersecting) {
           setIsVisible(true);
 
-          // Once revealed, stop observing.
-          // This prevents the section from disappearing again
-          // when scrolling back up.
+          // Reveal once and stop observing.
           observer.unobserve(element);
         }
       },
