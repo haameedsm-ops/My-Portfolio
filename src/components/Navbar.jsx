@@ -1,9 +1,43 @@
+
+import { useEffect, useRef, useState } from "react";
+
 function Navbar() {
+  const [isAnimating, setIsAnimating] = useState(false);
+  const animationTimer = useRef(null);
+
+  const playAnimation = () => {
+    clearTimeout(animationTimer.current);
+
+    // Reset first so the animation can replay.
+    setIsAnimating(false);
+
+    requestAnimationFrame(() => {
+      setIsAnimating(true);
+
+      animationTimer.current = setTimeout(() => {
+        setIsAnimating(false);
+      }, 1800);
+    });
+  };
+
+  useEffect(() => {
+    return () => clearTimeout(animationTimer.current);
+  }, []);
+
   return (
     <nav className="navbar">
-      <a href="#home" className="logo">
+      <a
+        href="#home"
+        className={`logo ${isAnimating ? "logo-active" : ""}`}
+        onClick={playAnimation}
+      >
         <span className="logo-mark">&gt;_</span>
-        <span>WORK LABS 🧪</span>
+
+        <span className="logo-text">
+          <span className="logo-base">WORK LABS</span>
+          <span className="logo-fill">WORK LABS</span>
+          <span className="logo-liquid">🧪</span>
+        </span>
       </a>
 
       <div className="nav-links">
