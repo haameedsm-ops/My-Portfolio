@@ -12,7 +12,7 @@
   background: #05080b;
 
   animation:
-    introExit 0.10s cubic-bezier(0.8, 0, 0.2, 1) 2.8s forwards;
+    introExit 0.10s cubic-bezier(0.8, 0, 0.2, 1) 4.5s forwards;
 }
 /* =========================================================
    BACKGROUND GRID
