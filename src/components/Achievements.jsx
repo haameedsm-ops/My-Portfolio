@@ -268,6 +268,8 @@ function Achievements() {
                   <img
                     src={achievement.image}
                     alt={`${achievement.title} certificate`}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               )}
@@ -307,6 +309,8 @@ function Achievements() {
                   <img
                     src={selectedAchievement.image}
                     alt={`${selectedAchievement.title} certificate`}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               ) : (
