@@ -73,6 +73,7 @@ a {
   font-weight: 700;
   letter-spacing: 1.5px;
   white-space: nowrap;
+  transition: color 0.3s ease;
 }
 
 .logo-mark {
@@ -80,6 +81,8 @@ a {
   font-family: "Courier New", monospace;
   font-size: 17px;
   font-weight: 700;
+  animation: logoCursor 1.5s ease-in-out infinite;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
 
 .nav-links {
@@ -129,6 +132,155 @@ a {
 .nav-links a:hover::after {
   width: 100%;
 }
+
+
+/* =========================================================
+   WORK LABS - RETURNING CHEMICAL FLASK ANIMATION
+========================================================= */
+
+.logo-text {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  padding: 5px 25px 5px 0;
+}
+
+/* Normal text */
+
+.logo-base {
+  color: #f5f7fa;
+}
+
+/* Chemical fill layer */
+
+.logo-fill {
+  position: absolute;
+  left: 0;
+  right: 25px;
+  top: 5px;
+  color: #7cffc4;
+  white-space: nowrap;
+  clip-path: inset(0 100% 0 0);
+  pointer-events: none;
+  text-shadow:
+    0 0 5px rgba(124, 255, 196, 0.8),
+    0 0 14px rgba(124, 255, 196, 0.4);
+}
+
+/* Original flask position */
+
+.logo-liquid {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: auto;
+  z-index: 3;
+  font-size: 18px;
+  opacity: 1;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Hover: chemical fills the letters */
+
+.logo:hover .logo-fill {
+  animation: liquidReveal 1s ease 0.4s forwards;
+}
+
+/* Hover: same flask travels and returns */
+
+.logo:hover .logo-liquid {
+  animation: flaskJourney 1.6s ease-in-out forwards;
+}
+
+/* Cursor mark */
+
+.logo-mark {
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.logo:hover .logo-mark {
+  transform: translateX(3px);
+  text-shadow: 0 0 12px #7cffc4;
+}
+
+/* Chemical filling */
+
+@keyframes liquidReveal {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Flask journey: right -> left -> right */
+
+@keyframes flaskJourney {
+  0% {
+    right: 0;
+    opacity: 1;
+    transform: translateY(-50%) rotate(0deg);
+  }
+
+  18% {
+    right: calc(100% - 25px);
+    transform: translateY(-50%) rotate(0deg);
+  }
+
+  25% {
+    right: calc(100% - 25px);
+    transform: translateY(-50%) rotate(-25deg);
+  }
+
+  85% {
+    right: 0;
+    transform: translateY(-50%) rotate(-25deg);
+  }
+
+  100% {
+    right: 0;
+    transform: translateY(-50%) rotate(0deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo:hover .logo-fill,
+  .logo:hover .logo-liquid {
+    animation: none;
+  }
+}
+
+
+/* =========================================================
+   MOBILE - TAP TO PLAY LOGO ANIMATION
+========================================================= */
+
+@media (hover: none) {
+  /* Prevent sticky mobile hover */
+
+  .logo:hover .logo-fill {
+    animation: none;
+  }
+
+  .logo:hover .logo-liquid {
+    animation: none;
+  }
+
+  /* Play animation when logo is tapped */
+
+  .logo.logo-active .logo-fill {
+    animation: liquidReveal 1s ease 0.4s forwards;
+  }
+
+  .logo.logo-active .logo-liquid {
+    animation: flaskJourney 1.6s ease-in-out forwards;
+  }
+}
+
+
 
 
 /* =========================================================
