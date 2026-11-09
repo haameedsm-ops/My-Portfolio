@@ -110,19 +110,19 @@ a {
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.3px;
-  transition: color 0.2s ease;
   white-space: nowrap;
+  padding-bottom: 7px;
 }
 
 .nav-links a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -7px;
+  bottom: 0;
   width: 0;
-  height: 1px;
+  height: 2px;
   background: #7cffc4;
-  transition: width 0.2s ease;
+  transition: width 0.25s ease;
 }
 
 .nav-links a:hover {
