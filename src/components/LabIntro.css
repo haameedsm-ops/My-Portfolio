@@ -12,7 +12,7 @@
   background: #05080b;
 
   animation:
-    introExit 0.10s cubic-bezier(0.8, 0, 0.2, 1) 4.5s forwards;
+    introExit 0.10s cubic-bezier(0.8, 0, 0.2, 1) 2.8s forwards;
 }
 /* =========================================================
    BACKGROUND GRID
@@ -1284,11 +1284,11 @@
 @keyframes elementFloat {
   0%,
   100% {
-    margin-top: 0;
+    transform: translateY(0);
   }
 
   50% {
-    margin-top: -8px;
+    transform: translateY(-8px);
   }
 }
 
@@ -1487,7 +1487,9 @@
   }
 
   .lab-intro {
-    opacity: 1;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
   }
 
   .lab-intro-grid,
