@@ -1463,10 +1463,13 @@
 
 /* =========================================================
    REDUCED MOTION
-   ========================================================= */
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-  .lab-intro,
+  .lab-intro {
+    animation: introExit 0.1s ease 4.5s forwards !important;
+  }
+
   .lab-intro-grid,
   .lab-orbit,
   .lab-element,
@@ -1486,10 +1489,6 @@
     animation: none !important;
   }
 
-  .lab-intro {
-    opacity: 1;
-  }
-
   .lab-intro-grid,
   .lab-orbit,
   .lab-element,
@@ -1501,6 +1500,8 @@
   .lab-middle-name span,
   .lab-last-name span {
     opacity: 1;
+    filter: none;
+    transform: none;
   }
 
   .terminal-line {

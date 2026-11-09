@@ -1,7 +1,7 @@
 const projects = {
   forensix: {
     name: "FORENSIX",
-    status: "ACTIVE",
+    status: "COMPLETED",
     type: "CYBERSECURITY",
     role: "FRONTEND DEVELOPER",
     stack: "React / Flask / Python",
@@ -14,7 +14,7 @@ const projects = {
       "A web-based platform designed to help analyze digital evidence and generate investigation reports.",
 
     learning:
-      "React architecture, API integration, report generation, GitHub collaboration, and cybersecurity workflows."
+      "React architecture, API integration, report generation, GitHub collaboration, and cybersecurity workflows.",
   },
 
   chatjump: {
@@ -32,7 +32,7 @@ const projects = {
       "An Android utility that uses Accessibility Services to quickly navigate through long chat conversations.",
 
     learning:
-      "Android Accessibility Services, gesture handling, background behavior, and mobile UI development."
+      "Android Accessibility Services, gesture handling, background behavior, and mobile UI development.",
   },
 
   diseaseAnalyzer: {
@@ -50,8 +50,26 @@ const projects = {
       "A Flask-based prototype that provides a web interface for disease analysis.",
 
     learning:
-      "Flask routing, frontend-backend communication, form handling, and Python web development."
-  }
+      "Flask routing, frontend-backend communication, form handling, and Python web development.",
+  },
+
+  repoDoctor: {
+    name: "REPO DOCTOR",
+    status: "ACTIVE",
+    type: "DEVELOPER TOOL",
+    role: "DEVELOPER",
+    stack: "Python / Git / OSV API",
+    github: "https://github.com/haameedsm-ops/Repo-doc",
+
+    problem:
+      "Understanding the health, security, quality, and dependency state of a software repository can require checking many things manually.",
+
+    solution:
+      "A developer-focused CLI that scans repositories, analyzes Git history, detects security issues, checks dependencies, identifies code-quality problems, and generates an overall repository health diagnosis.",
+
+    learning:
+      "Python CLI development, Git analysis, dependency scanning, vulnerability detection, code-quality analysis, repository metrics, and developer tooling.",
+  },
 };
 
 export default projects;
