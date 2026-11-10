@@ -1,7 +1,6 @@
 /* =========================================================
    GLOBAL
 ========================================================= */
-@import url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css");
 * {
   box-sizing: border-box;
 }
@@ -42,6 +41,7 @@ a {
   width: 100%;
 }
 
+
 /* =========================================================
    NAVBAR
 ========================================================= */
@@ -61,7 +61,6 @@ a {
   top: 0;
   z-index: 100;
 }
-
 
 .logo {
   display: inline-flex;
@@ -133,8 +132,6 @@ a {
 .nav-links a:hover::after {
   width: 100%;
 }
-
-
 
 
 /* =========================================================
@@ -282,6 +279,7 @@ a {
     animation: flaskJourney 1.6s ease-in-out forwards;
   }
 }
+
 
 
 
@@ -489,164 +487,6 @@ a {
   font-size: 12px;
 }
 
-/* =========================================================
-   HERO → SECTION TRANSITION
-========================================================= */
-
-.hero-transition {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: flex;
-  pointer-events: none;
-  overflow: hidden;
-  background: #080b10;
-}
-
-.transition-panel {
-  position: absolute;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  background: #080b10;
-  z-index: 1;
-}
-
-.transition-panel-left {
-  left: 0;
-  animation: panelLeft 0.8s ease-in-out forwards;
-}
-
-.transition-panel-right {
-  right: 0;
-  animation: panelRight 0.8s ease-in-out forwards;
-}
-
-.transition-line {
-  position: absolute;
-  top: 0;
-  width: 1px;
-  height: 100%;
-  background: #7cffc4;
-  opacity: 0;
-  z-index: 2;
-}
-
-.transition-line-left {
-  left: 50%;
-  animation: transitionLine 0.8s ease-in-out forwards;
-}
-
-.transition-line-right {
-  right: 50%;
-  animation: transitionLine 0.8s ease-in-out forwards;
-}
-
-.transition-core {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 3;
-  transform: translate(-50%, -50%);
-  color: #7cffc4;
-  font-family: "Courier New", monospace;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  opacity: 0;
-  animation: transitionCore 0.8s ease forwards;
-}
-
-@keyframes panelLeft {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes panelRight {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-@keyframes transitionLine {
-  0% {
-    opacity: 0;
-    transform: scaleY(0);
-  }
-
-  30% {
-    opacity: 1;
-    transform: scaleY(1);
-  }
-
-  70% {
-    opacity: 1;
-    transform: scaleY(1);
-  }
-
-  100% {
-    opacity: 0;
-    transform: scaleY(0);
-  }
-}
-
-@keyframes transitionCore {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.8);
-  }
-
-  35% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-
-  70% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(1.05);
-  }
-}
-
-/* =========================================================
-   DESTINATION SCREEN ANIMATION
-========================================================= */
-
-.screen-incoming {
-  animation: screenIncoming 1s ease both;
-}
-
-@keyframes screenIncoming {
-  0% {
-    opacity: 0;
-    transform: translateY(35px);
-    filter: blur(4px);
-  }
-
-  45% {
-    opacity: 0.7;
-    transform: translateY(12px);
-    filter: blur(1px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
-}
 
 /* =========================================================
    STATUS
@@ -694,6 +534,7 @@ a {
   margin: 0 auto;
   padding: 90px 60px;
 }
+
 /* =========================================================
    HEADER
 ========================================================= */
@@ -747,9 +588,9 @@ a {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #596572;
-  box-shadow: none;
-  animation: buildPulseMuted 2s ease-in-out infinite;
+  background: #7cffc4;
+  box-shadow: 0 0 9px rgba(124, 255, 196, 0.65);
+  animation: buildPulse 1.8s ease-in-out infinite;
 }
 
 /* =========================================================
@@ -778,18 +619,18 @@ a {
   width: 3px;
   height: 100%;
   background: #7cffc4;
-  opacity: 0.45;
+  opacity: 0.55;
   transition: opacity 0.3s ease;
 }
 
 .build-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(124, 255, 196, 0.25);
+  border-color: rgba(124, 255, 196, 0.35);
   background: #0d1319;
 }
 
 .build-card:hover::before {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 /* =========================================================
@@ -819,7 +660,7 @@ a {
 }
 
 .build-index {
-  color: #7f8b98;
+  color: #7cffc4;
 }
 
 /* =========================================================
@@ -860,10 +701,10 @@ a {
   gap: 8px;
   flex-shrink: 0;
   padding: 7px 11px;
-  border: 1px solid #28313b;
+  border: 1px solid rgba(124, 255, 196, 0.3);
   border-radius: 4px;
-  color: #aeb8c2;
-  background: #10161d;
+  color: #7cffc4;
+  background: rgba(124, 255, 196, 0.035);
   font-size: 9px;
   font-weight: 600;
   letter-spacing: 0.13em;
@@ -875,7 +716,7 @@ a {
   flex-shrink: 0;
   border-radius: 50%;
   background: #7cffc4;
-  box-shadow: 0 0 6px rgba(124, 255, 196, 0.4);
+  box-shadow: 0 0 8px rgba(124, 255, 196, 0.55);
 }
 
 /* =========================================================
@@ -919,7 +760,7 @@ a {
 }
 
 .build-tech span:hover {
-  border-color: #34414d;
+  border-color: rgba(124, 255, 196, 0.3);
   background: #0e151b;
   color: #b8c2cc;
 }
@@ -954,7 +795,7 @@ a {
 }
 
 .build-progress-header strong {
-  color: #8d98a5;
+  color: #7cffc4;
   font-size: 12px;
   font-weight: 600;
 }
@@ -973,7 +814,7 @@ a {
   height: 100%;
   border-radius: inherit;
   background: #7cffc4;
-  box-shadow: 0 0 8px rgba(124, 255, 196, 0.18);
+  box-shadow: 0 0 10px rgba(124, 255, 196, 0.25);
   transform-origin: left;
   animation: buildProgress 1.2s ease-out;
 }
@@ -1007,15 +848,10 @@ a {
   align-items: center;
   gap: 9px;
   margin-bottom: 32px;
-  color: #aeb8c2;
+  color: #7cffc4;
   font-size: 9px;
   font-weight: 600;
   letter-spacing: 0.13em;
-}
-
-.build-system-status .build-status-dot {
-  background: #7cffc4;
-  box-shadow: 0 0 6px rgba(124, 255, 196, 0.35);
 }
 
 .build-side-block {
@@ -1069,20 +905,10 @@ a {
 }
 
 /* =========================================================
-   GITHUB ACTIVITY
-========================================================= */
-
-.build-side .github-activity-dot {
-  background: #7cffc4;
-  box-shadow: 0 0 0 0 rgba(124, 255, 196, 0.45);
-  animation: githubPulse 2s infinite;
-}
-
-/* =========================================================
    ANIMATIONS
 ========================================================= */
 
-@keyframes buildPulseMuted {
+@keyframes buildPulse {
   0%,
   100% {
     opacity: 0.45;
@@ -1090,22 +916,8 @@ a {
   }
 
   50% {
-    opacity: 0.8;
-    transform: scale(1.05);
-  }
-}
-
-@keyframes githubPulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(124, 255, 196, 0.45);
-  }
-
-  70% {
-    box-shadow: 0 0 0 7px rgba(124, 255, 196, 0);
-  }
-
-  100% {
-    box-shadow: 0 0 0 0 rgba(124, 255, 196, 0);
+    opacity: 1;
+    transform: scale(1.15);
   }
 }
 
@@ -4763,8 +4575,6 @@ a {
 
 .achievement-card-content {
   position: relative;
-  display: flex;
-  flex-direction: column;
   min-height: 235px;
   padding: 24px;
   z-index: 2;
@@ -4823,11 +4633,14 @@ a {
 }
 
 .achievement-card-footer {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: start;
-  gap: 12px;
-  margin-top: auto;
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
   padding-top: 17px;
   border-top: 1px solid #1d252f;
 }
@@ -4836,14 +4649,12 @@ a {
 .view-certificate {
   display: inline-flex;
   align-items: center;
-  min-width: 0;
   gap: 7px;
   color: #697580;
   font-family: "Consolas", "Courier New", monospace;
   font-size: 8px;
   font-weight: 600;
   letter-spacing: 1.1px;
-  line-height: 1.4;
 }
 
 .achievement-status span {
@@ -4856,8 +4667,6 @@ a {
 }
 
 .view-certificate {
-  justify-self: end;
-  white-space: nowrap;
   color: #8d98a5;
   transition: color 0.2s ease;
 }
@@ -5299,13 +5108,10 @@ a {
   }
 
   .achievement-card-footer {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 8px;
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
     padding-top: 14px;
-  }
-
-  .view-certificate {
-    justify-self: end;
   }
 
   .achievement-status,
@@ -5404,6 +5210,11 @@ a {
   .achievement-card-content {
     padding-left: 16px;
     padding-right: 16px;
+  }
+
+  .achievement-card-footer {
+    left: 16px;
+    right: 16px;
   }
 
   .certificate-modal-header {
@@ -5506,11 +5317,7 @@ a {
 }
 
 @media (max-width: 700px) {
-  .achievement-status,
-  .view-certificate {
-    font-size: 8px;
-    letter-spacing: 0.7px;
-  }
+  
 }
 .achievement-description {
   max-width: 100%;
@@ -5523,6 +5330,9 @@ a {
   min-height: 235px;
 }
 
+.achievement-card-footer {
+  bottom: 22px;
+}
 /* =========================================================
    SKILLS / CAPABILITIES — WORK LABS
    ========================================================= */
