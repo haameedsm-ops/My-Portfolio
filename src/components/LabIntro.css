@@ -1284,11 +1284,11 @@
 @keyframes elementFloat {
   0%,
   100% {
-    transform: translateY(0);
+    margin-top: 0;
   }
 
   50% {
-    transform: translateY(-8px);
+    margin-top: -8px;
   }
 }
 
@@ -1463,10 +1463,16 @@
 
 /* =========================================================
    REDUCED MOTION
-   ========================================================= */
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-  .lab-intro,
+  .lab-intro {
+    animation: none !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
   .lab-intro-grid,
   .lab-orbit,
   .lab-element,
@@ -1486,12 +1492,6 @@
     animation: none !important;
   }
 
-  .lab-intro {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
-
   .lab-intro-grid,
   .lab-orbit,
   .lab-element,
@@ -1503,6 +1503,8 @@
   .lab-middle-name span,
   .lab-last-name span {
     opacity: 1;
+    filter: none;
+    transform: none;
   }
 
   .terminal-line {
